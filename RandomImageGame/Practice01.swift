@@ -8,102 +8,110 @@
 import SwiftUI
 
 struct Practice01: View {
-
+    @State var showDetail = false
     @State var count: Int = 3
     @State var stage: Int = 0
     @State var quiz : [Quiz] = quizArr1
     @State var answer: Int = 0
+    @State var onOff: Bool = true
+   
+
     var body: some View {
-        VStack{
-        
-            Text("랜덤게임").font(.largeTitle).foregroundColor(.cyan)
+        NavigationView {
             
-            Image(quiz[stage].imgName)
-                .resizable()
-                .frame(width: 350, height: 300)
-                .padding()
             VStack{
                 
+                Text("Round \(stage)").font(.largeTitle).foregroundColor(.cyan)
                 
-                HStack{
-                    VStack{
-                        Text("1번")
-                        Text("2번")
-                        Text("3번")
-                        Text("4번")
-                        
+                Image(quiz[stage].imgName)
+                    .resizable()
+                    .frame(width: 350, height: 300)
+                    .padding()
+                VStack{
+                    
+                    HStack{
+                        VStack{
+                            Text("1번")
+                            Text("2번")
+                            Text("3번")
+                            Text("4번")
+                            
+                        }
+                        .font(.largeTitle)
+                        //                    .padding()
+                        VStack{
+                            
+                            Button {
+                                print("gg")
+                                buttonClick(0)
+                            } label: {
+                                Text(quiz[stage].answers[0]).frame(width:300)
+                            }.tag(0)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 30).stroke(Color.black, lineWidth: 2))
+                            
+                            Button {
+                                print("gg")
+                                buttonClick(1)
+                            } label: {
+                                Text(quiz[stage].answers[1]).frame(width:300)
+                            }.tag(1)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 30).stroke(Color.black, lineWidth: 2))
+                            
+                            Button {
+                                print("gg")
+                                buttonClick(2)
+                            } label: {
+                                Text(quiz[stage].answers[2]).frame(width:300)
+                            }.tag(2)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 30).stroke(Color.black, lineWidth: 2))
+                            
+                            Button {
+                                print("gg")
+                                buttonClick(3)
+                            } label: {
+                                Text(quiz[stage].answers[3]).frame(width:300)
+                            }.tag(3)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 30).stroke(Color.black, lineWidth: 2))
+                            
+                        }
+                        .font(.largeTitle)
                     }
-                    .font(.largeTitle)
-                    //                    .padding()
-                    VStack{
-                        
-                        Button {
-                            print("gg")
-                            buttonClick(0)
+                    .padding()
+                    HStack{
+                        Button { reset()
                         } label: {
-                            Text(quiz[stage].answers[0]).frame(width:300)
-                        }.tag(0)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 30).stroke(Color.black, lineWidth: 2))
+                            Text("초기화")
+                                .font(.title)
+                                .padding(.horizontal, 50.0)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 2))
+                            
+                        }
                         
-                        Button {
-                            print("gg")
-                            buttonClick(1)
-                        } label: {
-                            Text(quiz[stage].answers[1]).frame(width:300)
-                        }.tag(1)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 30).stroke(Color.black, lineWidth: 2))
-                        
-                        Button {
-                            print("gg")
-                            buttonClick(2)
-                        } label: {
-                            Text(quiz[stage].answers[2]).frame(width:300)
-                        }.tag(2)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 30).stroke(Color.black, lineWidth: 2))
-                        
-                        Button {
-                            print("gg")
-                            buttonClick(3)
-                        } label: {
-                            Text(quiz[stage].answers[3]).frame(width:300)
-                        }.tag(3)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 30).stroke(Color.black, lineWidth: 2))
-                        
-                    }
-                    .font(.largeTitle)
-                }
-                .padding()
-                HStack{
-                    Button {
-                      reset()
-                    } label: {
-                        Text("초기화")
+                        Text("기회x \(count)")
+                            .foregroundColor(.red)
                             .font(.title)
                             .padding(.horizontal, 50.0)
                             .overlay(
-                            RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 2))
-                        
+                                RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 2))
                     }
-                    
-                    Text("기회x \(count)")
-                        .foregroundColor(.red)
-                        .font(.title)
-                        .padding(.horizontal, 50.0)
-                        .overlay(
-                        RoundedRectangle(cornerRadius: 30).stroke(Color.gray, lineWidth: 2))
-                }
-            }
+                    var abc = NavigationLink(destination: LastPage()) {
+                        Text("\(answer) / 10 문제").font(.largeTitle)}.disabled(onOff)
+            abc
             
+                }
+                
+            }
         }
-        
     }
     
+   
     func buttonClick(_ tag:Int) {
-        guard stage < 10 else { return reset() }
+        guard stage < 10 else { return onOff = false }
         if quiz[stage].answerIndex == tag {
             stage += 1
             answer += 1
@@ -115,16 +123,16 @@ struct Practice01: View {
                 count = 3
             }
         }
- 
+        print(stage)
     }
-    
+ 
     func reset(){
         
         stage = 0
         count = 3
     }
-    
 }
+
 
 
 

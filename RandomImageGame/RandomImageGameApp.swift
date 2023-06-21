@@ -11,7 +11,7 @@ import SwiftUI
 struct RandomImageGameApp: App {
     var body: some Scene {
         WindowGroup {
-            NextPage()
+           Practice01()
         }
     }
 }
