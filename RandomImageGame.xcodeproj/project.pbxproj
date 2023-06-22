@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7521A582A441EFB00B182BC /* SwiftUIView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7521A572A441EFB00B182BC /* SwiftUIView1.swift */; };
 		B77CE1C02A42EBFA0043E7D5 /* RandomImageGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CE1BF2A42EBFA0043E7D5 /* RandomImageGameApp.swift */; };
 		B77CE1C22A42EBFA0043E7D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CE1C12A42EBFA0043E7D5 /* ContentView.swift */; };
 		B77CE1C42A42EBFB0043E7D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77CE1C32A42EBFB0043E7D5 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B7521A572A441EFB00B182BC /* SwiftUIView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView1.swift; sourceTree = "<group>"; };
 		B77CE1BC2A42EBFA0043E7D5 /* RandomImageGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomImageGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77CE1BF2A42EBFA0043E7D5 /* RandomImageGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageGameApp.swift; sourceTree = "<group>"; };
 		B77CE1C12A42EBFA0043E7D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				B77CE1C12A42EBFA0043E7D5 /* ContentView.swift */,
 				B77CE1D12A4322530043E7D5 /* Practice01.swift */,
 				B77CE1D32A43410F0043E7D5 /* NextPage.swift */,
+				B7521A572A441EFB00B182BC /* SwiftUIView1.swift */,
 				B77CE1D52A4342FA0043E7D5 /* LastPage.swift */,
 				B77CE1CD2A42EC230043E7D5 /* Quiz.swift */,
 				B77CE1C32A42EBFB0043E7D5 /* Assets.xcassets */,
@@ -155,6 +158,7 @@
 				B77CE1CE2A42EC230043E7D5 /* Quiz.swift in Sources */,
 				B77CE1D42A43410F0043E7D5 /* NextPage.swift in Sources */,
 				B77CE1D22A4322530043E7D5 /* Practice01.swift in Sources */,
+				B7521A582A441EFB00B182BC /* SwiftUIView1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
