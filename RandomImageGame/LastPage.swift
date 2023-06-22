@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct LastPage: View {
-    @State var showDetail = false
-
     var body: some View {
         VStack {
             Text("수고하셨습니다.문제가 끝났습니다").font(.largeTitle)
